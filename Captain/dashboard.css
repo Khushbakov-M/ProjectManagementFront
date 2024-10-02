@@ -1,0 +1,66 @@
+.navbar {
+    background-color: #194c86;
+}
+
+.navbar a {
+    color: #fff;
+}
+
+#logoutBtn {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    color: #fff;
+}
+#logoutBtn:hover {
+    color: #000000;
+}
+
+#profile-btn {
+    background-color: transparent;
+    border: none;
+    padding-right: 1.2rem;
+
+}
+
+.profile-box {
+    width: 10%;
+}
+
+#drop-list {
+    text-align: right;
+}
+
+.dropdown-menu[data-bs-popper] {
+    top: 122%;
+    left: -30%;
+    margin-top: var(--bs-dropdown-spacer);
+    background-color: #103866;
+}
+
+.card {
+    background-color: #194c86;
+    color: whitesmoke;
+
+    box-shadow: 4px 6px 10px -1px rgba(0, 0, 0, 0.65);
+    -webkit-box-shadow: 4px 6px 10px -1px rgba(0, 0, 0, 0.65);
+    -moz-box-shadow: 4px 6px 10px -1px rgba(0, 0, 0, 0.65);
+}
+
+.card:hover {
+    animation: cardAnimation .7s ease 0s 1 normal forwards;
+}
+
+@keyframes cardAnimation {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

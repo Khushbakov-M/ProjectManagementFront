@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E'lonlar</title>
+    <link rel="stylesheet" href="announcements.css">
+    <link rel="stylesheet" href="../../bs/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../bootstrap-icons-1.5.0/bootstrap-icons.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand mx-4 mb-1" href="../dashboard.html">Project Management</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item ">
+                        <a class="nav-link active" href="../Announcements/announcements.html">E'lonlarim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Teams/teams.html">Jamoalar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Developers/developers.html">Dasturchilar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Requests/requests.html">Takliflar</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="../Vacancies/vacancies.html">Kerakli ishchilar</a>
+                    </li>
+                </ul>
+            </div>
+            <button id="logoutBtn"><i class="bi bi-box-arrow-left h2 my-3"></i></button>
+
+        </nav>
+    </header>
+
+    <div class="d-flex justify-content-center m-3">
+        <button type="button" class="btn btn-outline-success text-light w-25" style="height: 50px; background: #194c86;"
+            data-bs-toggle="modal" data-bs-target="#openModalBtn">
+            <i class="bi bi-plus-circle" style="margin-right: 5px"></i>Yangi e'lon yaratish
+        </button>
+    </div>
+    <div class="row justify-content-center mb-0">
+        <div class="d-flex justify-content-between mt-3 w-75" style="height: 50px;">
+            <div class="input-group mb-3" style="width: 40%;">
+                <span class="input-group-text" style="background-color: #194c86; color: #fff;" id="basic-addon1"><i
+                        class="bi bi-kanban-fill"></i></span>
+                <input id="filter_project_name" type="text" class="form-control py-2" placeholder="Proekt nomi"
+                    aria-label="Proekt nomi" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3" style="width: 40%;">
+                <span class="input-group-text" style="background-color: #194c86; color: #fff;" id="basic-addon1">
+                    <i class="bi bi-check-square-fill"></i>
+                </span>
+                <select id="typeSelect" class="form-control py-2" aria-placeholder="Holati"
+                    aria-describedby="basic-addon1">
+                    <option value="all">Hammasi</option>
+                    <option value="active">Bajarilmoqda</option>
+                    <option value="accepted">Qabullanganlar</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="main d-flex justify-content-center flex-wrap" id="main">
+        <!-- generate cards -->
+    </div>
+
+    <!-- New update modal -->
+    <div id="openModalBtn" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Yangi e'lon yaratish</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="myForm" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="tashkilot_nomi">Tashkilot nomi:</label>
+                            <input type="text" class="form-control" id="tashkilot_nomi" name="tashkilot_nomi" placeholder="Tashkilot Nomi">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefon Raqam:</label>
+                            <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="employer_name">Buyurtmachi:</label>
+                            <input type="text" class="form-control" id="employer_name" name="name_of_employer" placeholder="Buyurtmachi">
+                        </div>
+                        <div class="form-group">
+                            <label for="project_name">Loyiha:</label>
+                            <input type="text" class="form-control" id="project_name" name="project_name" placeholder="Loyiha">
+                        </div>
+                        <div class="form-group">
+                            <label for="deadline">Topshirish kuni:</label>
+                            <input type="date" class="form-control" id="deadline" name="deadline" placeholder="Topshirish kuni">
+                        </div>
+                        <div class="form-group">
+                            <label for="cost">Narx:</label>
+                            <input type="number" class="form-control" id="cost" name="cost" placeholder="Narx">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Izoh:</label>
+                            <textarea class="form-control" id="description" name="description" placeholder="Izoh"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="file1">Fayl:</label>
+                            <div class="file-input-container">
+                                <input type="file" class="form-control input-files" id="file1" name="file1">
+                                <button type="button" class="clear-buttons" id="clearFile1Btn">O'chirish</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="file2">Qo'shimcha Fayl:</label>
+                            <div class="file-input-container">
+                                <input type="file" class="form-control input-files" id="file2" name="file2">
+                                <button type="button" class="clear-buttons" id="clearFile2Btn">O'chirish</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="file3">Qo'shimcha Fayl:</label>
+                            <div class="file-input-container">
+                                <input type="file" class="form-control input-files" id="file3" name="file3">
+                                <button type="button" class="clear-buttons" id="clearFile3Btn">O'chirish</button>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../../bs/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E'lonlar</title>
+    <link rel="stylesheet" href="announcements.css">
+    <link rel="stylesheet" href="../../bs/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../bootstrap-icons-1.5.0/bootstrap-icons.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand mx-4 mb-1" href="../dashboard.html">Project Management</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../Announcements/announcements.html">Elonlar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Teams/teams.html">Mening jamoam</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Requests/requests.html">So'rovlar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../SubTeams/subteams.html">Bajaruvchilar</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="../Vacancies/vacancies.html">Kerakli ishchilar</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <button id="logoutBtn"><i class="bi bi-box-arrow-left h2 my-3"></i></button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="row justify-content-center mb-0">
+        <div class="d-flex justify-content-between mt-3 w-75" style="height: 50px;">
+            <div class="input-group mb-3" style="width: 40%;">
+                <span class="input-group-text" style="background-color: #194c86; color: #fff;" id="basic-addon1"><i
+                        class="bi bi-kanban-fill"></i></span>
+                <input id="filter_project_name" type="text" class="form-control py-2" placeholder="Proekt nomi"
+                    aria-label="Proekt nomi" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3" style="width: 40%;">
+                <span class="input-group-text" style="background-color: #194c86; color: #fff;" id="basic-addon1">
+                    <i class="bi bi-check-square-fill"></i>
+                </span>
+                <select id="typeSelect" class="form-control py-2" aria-placeholder="Holati"
+                    aria-describedby="basic-addon1">
+                    <option value="all">Hammasi</option>
+                    <option value="active">Bajarilmoqda</option>
+                    <option value="accepted">Qabullanganlar</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="main d-flex justify-content-center flex-wrap" id="main">
+
+    </div>
+
+    <!-- New update modal -->
+    <div class="modal fade" id="sendRequestModal" tabindex="-1" aria-labelledby="proekt_nomi" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="proekt_nomi">Taklif berish</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="myForm">
+                        <div class="mb-3">
+                            <label for="myDeadline" class="form-label">Deadline:</label>
+                            <input type="date" class="form-control" id="myDeadline" name="deadline"
+                                placeholder="Deadline">
+                        </div>
+                        <div class="mb-3">
+                            <label for="myCost" class="form-label">Mening narxim:</label>
+                            <input type="number" class="form-control" id="myCost" name="cost" placeholder="$$$">
+                        </div>
+                        <div class="mb-3">
+                            <label for="myDescription" class="form-label">Description:</label>
+                            <textarea class="form-control" id="myDescription" name="description"
+                                placeholder="Description"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="button" id="sendButton" class="btn btn-success">Jo'natish</button>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../../bs/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bootstrap-icons-1.5.0/bootstrap-icons.css">
+    <link rel="stylesheet" href="../bs/css/bootstrap.min.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <title>Bosh sahifa</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand mx-4 mb-1" href="#">Project Management</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="Announcements/announcements.html">Elonlar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Teams/teams.html">Mening jamoam</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Requests/requests.html">So'rovlar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="SubTeams/subteams.html">Bajaruvchilar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Vacancies/vacancies.html">Kerakli ishchilar</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <button id="logoutBtn"><i class="bi bi-box-arrow-left h2 my-3"></i></button>
+            </div>
+        </nav>
+    </header>
+
+    <h1 class="text-center mt-2">Statistika</h1>
+<div class="container-fluid d-flex justify-content-center">
+    <div class="row w-75 justify-content-center">
+        <div class="mt-6 col-xl-4 col-lg-6 col-md-12 col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div>
+                            <h4 class="mb-0">Bizdagi E'lonlar</h4>
+                        </div>
+                        <div class="icon-shape icon-md bg-light-primary text-primary rounded-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="25" height="25" fill="white">
+                                <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center rounded-circle bg-light text-dark-emphasis" style="width: 60px; height: 60px;">
+                        <span id="announcements_count" class="fw-bold h1 m-0 pb-1">0</span>
+                    </div>
+                    <p id="done_count" class="h5 m-0 mt-2 pb-1">0</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../bs/js/bootstrap.bundle.min.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+
+</html>

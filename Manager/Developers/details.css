@@ -1,0 +1,51 @@
+.developer-card {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #0c2f57;
+    color: white;
+}
+
+.developer-card img {
+    width: 25%;
+    object-fit: cover;
+}
+
+.developer-info {
+    padding: 20px;
+    width: 65%;
+}
+
+.developer-info h4 {
+    font-weight: bold;
+}
+
+.developer-info h5 {
+    color: rgb(187, 255, 0) !important;
+    font-family: 'Courier New', Courier, monospace;
+}
+.developer-info h5 a {
+    text-decoration: none;
+    color: rgb(169, 219, 162) !important;
+    border: 0.5px dashed white;
+    padding: 5px 5px 0 5px;
+}
+.navbar{
+    background-color: #194c86;
+}
+.navbar a{
+    color: #fff;
+}
+#logoutBtn i{
+    color: #fff;
+}
+#logoutBtn i:hover{
+    color: red;
+}
+#logoutBtn{
+    background-color: transparent; 
+    border: none; 
+    padding-right: 1.2rem;
+}

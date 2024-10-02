@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E'lonlar</title>
+    <link rel="stylesheet" href="details.css">
+    <link rel="stylesheet" href="../../bs/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../bootstrap-icons-1.5.0/bootstrap-icons.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand mx-4 mb-1" href="../dashboard.html">Project Management</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../Announcements/announcements.html">Elonlar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Teams/teams.html">Mening jamoam</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Requests/requests.html">So'rovlar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../SubTeams/subteams.html">Bajaruvchilar</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <button id="logoutBtn"><i class="bi bi-box-arrow-left h2 my-3"></i></button>
+            </div>
+        </nav>
+    </header>
+
+    <div id="main"></div>
+
+    <div id="myUpdateModal" class="modal">
+        <div class="modal-content">
+            <button type="button" class="btn-close" data-bs-dismiss="myUpdateModal" aria-label="Close"></button>
+            <form id="myUpdateForm" enctype="multipart/form-data">
+                <label for="person">Person:</label>
+                <select id="person" name="person">
+                    <option value="jismoniy">Jismoniy shaxs</option>
+                    <option value="yuridik">Yuridik shaxs</option>
+                </select>
+                <label for="tashkilot_nomi">Tashkilot nomi:</label>
+                <input type="text" id="tashkilot_nomi" name="tashkilot_nomi" placeholder="Tashkilot Nomi">
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" placeholder="Address">
+                <label for="phone">Phone:</label>
+                <input type="text" id="phone" name="phone" placeholder="Phone">
+                <label for="name_of_employer">Name of employer:</label>
+                <input type="text" id="name_of_employer" name="name_of_employer" placeholder="Name of Employer">
+                <label for="project_name">Project name:</label>
+                <input type="text" id="project_name" name="project_name" placeholder="Project Name">
+                <label for="deadline">Deadline:</label>
+                <input type="date" id="deadline" name="deadline" placeholder="Deadline">
+                <label for="cost">Cost:</label>
+                <input type="number" id="cost" name="cost" placeholder="Cost">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" placeholder="Description"></textarea>
+                <label for="file">File:</label>
+                <input type="file" id="file" name="file">
+                <label for="file2">File 2:</label>
+                <input type="file" id="file2" name="file2">
+                <label for="file3">File 3:</label>
+                <input type="file" id="file3" name="file3">
+                <button type="submit">Update</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../../bs/js/bootstrap.bundle.min.js"></script>
+    <script src="details.js"></script>
+    <!-- <script src="app2.js"></script> -->
+</body>
+
+</html>

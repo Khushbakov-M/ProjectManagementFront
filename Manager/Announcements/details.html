@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E'lonlar</title>
+    <link rel="stylesheet" href="details.css">
+    <link rel="stylesheet" href="../../bs/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../bootstrap-icons-1.5.0/bootstrap-icons.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand mx-4 mb-1" href="../dashboard.html">Project Management</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../Announcements/announcements.html">E'lonlarim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Teams/teams.html">Jamoalar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Developers/developers.html">Dasturchilar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Requests/requests.html">Takliflar</a>
+                    </li>
+                </ul>
+            </div>
+            <button id="logoutBtn"><i class="bi bi-box-arrow-left h2 my-3"></i></button>
+        </nav>
+    </header>
+    <div id="main"></div>
+
+    <div id="myUpdateModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">E'lonni tahrirlash</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="myUpdateForm" enctype="multipart/form-data">
+                <label for="tashkilot_nomi">Tashkilot nomi:</label>
+                <input type="text" id="tashkilot_nomi" name="tashkilot_nomi" placeholder="Tashkilot Nomi">
+                <label for="phone">Telefon Raqam:</label>
+                <input type="text" id="phone" name="phone" placeholder="Telefon Raqam">
+                <label for="name_of_employer">Buyurtmachi:</label>
+                <input type="text" id="name_of_employer" name="name_of_employer" placeholder="Buyurtmachi">
+                <label for="project_name">Loyiha:</label>
+                <input type="text" id="project_name" name="project_name" placeholder="Loyiha">
+                <label for="deadline">Topshirish kuni:</label>
+                <input type="date" id="deadline" name="deadline" placeholder="Topshirish kuni">
+                <label for="cost">Narx:</label>
+                <input type="number" id="cost" name="cost" placeholder="Narx">
+                <label for="description">Izoh:</label>
+                <textarea id="description" name="description" placeholder="Izoh"></textarea>
+                <label for="file1">Fayl:</label>
+                <div class="form-group file-group">
+                    <div class="file-input-container">
+                        <input type="file" id="file1" name="file1">
+                        <input type="hidden" id="hiddenFile1" name="hiddenFile1">
+                        <label class="remove-label">
+                            <input type="checkbox" id="remove_file1" name="remove_file1">
+                        </label>
+                    </div>
+                </div>
+                <div class="fileLinks" id="fileLink1"></div>
+                <label for="file2">Qo'shimcha Fayl:</label>
+                <div class="form-group file-group">
+                    <div class="file-input-container">
+                        <input type="file" id="file2" name="file2">
+                        <input type="hidden" id="hiddenFile2" name="hiddenFile2">
+                        <label class="remove-label">
+                            <input type="checkbox" id="remove_file2" name="remove_file2">Fayl 
+                        </label>
+                    </div>
+                </div>
+                <div class="fileLinks" id="fileLink2"></div>
+                <label for="file3">Qo'shimcha Fayl:</label>
+                <div class="form-group file-group">
+                    <div class="file-input-container">
+                        <input type="file" id="file3" name="file3">
+                        <input type="hidden" id="hiddenFile3" name="hiddenFile3">
+                        <label class="remove-label">
+                            <input type="checkbox" id="remove_file3" name="remove_file3">
+                        </label>
+                    </div>
+                </div>
+                <div class="fileLinks" id="fileLink3"></div>
+                
+                
+                <button type="submit">Tahrirlash</button>
+            </form>
+        </div>
+    </div>
+    
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../../bs/js/bootstrap.bundle.min.js"></script>
+    <script src="details.js"></script>
+</body>
+
+</html>

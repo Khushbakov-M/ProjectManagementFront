@@ -1,0 +1,190 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+
+.card {
+    background-color: #fff;
+    border-radius: 15px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 90%;
+    border-left: 10px solid #194c86;
+    overflow: hidden;
+    position: relative; /* Added */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card-header {
+    position: absolute; /* Added */
+    top: 10px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+    display: flex;
+    gap: 10px; /* Space between buttons */
+}
+
+.btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.btn-edit {
+    color: #007bff;
+}
+
+.btn-delete {
+    color: #dc3545;
+}
+
+.btn:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+    width: 100%;
+    margin-top: 0;
+    font-size: 1.8em;
+    color: #194c86;
+    border-bottom: 2px solid #194c86;
+    padding-bottom: 10px;
+}
+
+.card .section {
+    width: 100%;
+    margin-bottom: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card .section p {
+    flex: 1 1 45%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.card .section.full-width p {
+    flex: 1 1 100%;
+}
+
+.card .highlight {
+    background-color: #e7f5fe;
+    padding: 5px;
+    border-radius: 5px;
+    color: #194c86;
+}
+
+.card .footer {
+    width: 100%;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #ececec;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card .footer p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #999;
+}
+
+.card .footer a {
+    font-size: 0.9em;
+    color: #194c86;
+}
+
+.card a {
+    color: #194c86;
+    text-decoration: none;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+.document-card {
+    background-color: #ececec;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1 1 30%;
+}
+
+.document-card a {
+    color: #194c86;
+    text-decoration: none;
+}
+
+.document-card a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .card .section p {
+        flex: 1 1 100%;
+    }
+}
+
+
+.card .btn-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.card .btn-info {
+    background-color: #194c86;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.card .btn-info:hover {
+    background-color: #163b6d;
+}
+
+
+.navbar{
+    background-color: #194c86;
+}
+.navbar a{
+    color: #fff;
+}
+#logoutBtn i{
+    color: #fff;
+}
+#logoutBtn i:hover{
+    color: red;
+}
+#logoutBtn{
+    background-color: transparent; 
+    border: none; 
+    padding-right: 1.2rem;
+}
+

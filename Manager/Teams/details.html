@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jamoalar</title>
+    <link rel="stylesheet" href="teams.css">
+    <link rel="stylesheet" href="../../bootstrap-icons-1.5.0/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../bs/css/bootstrap.min.css">
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand mx-4 mb-1" href="../dashboard.html">Project Management</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Announcements/announcements.html">E'lonlarim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../Teams/teams.html">Jamoalar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Developers/developers.html">Dasturchilar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Requests/requests.html">Takliflar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Vacancies/vacancies.html">Kerakli ishchilar</a>
+                    </li>
+                </ul>
+            </div>
+                        <button id="logoutBtn"><i class="bi bi-box-arrow-left h2 my-3"></i></button>
+
+        </nav>
+    </header>
+
+    <div id="main">
+        <div id="team_container">
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="teamEditModal" tabindex="-1" role="dialog" aria-labelledby="userModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="userModalLabel">Jamoa ma'lumotlarini tahrirlash</h5>
+                </div>
+                <div class="modal-body">
+                    <form id="userForm">
+                        <div class="form-group">
+                            <label for="title">Title:</label>
+                            <input type="text" class="form-control" id="title" name="title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="username">Username:</label>
+                            <input type="text" class="form-control" id="username" name="username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" class="form-control" placeholder="Yangi password yoki o'zgartirmang"
+                                id="password" name="password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="first_name">First Name:</label>
+                            <input type="text" class="form-control" id="first_name" name="first_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="last_name">Last Name:</label>
+                            <input type="text" class="form-control" id="last_name" name="last_name" required>
+                        </div>
+                        <div class="forBtn d-flex justify-content-center">
+                            <button type="button" class="btn btn-primary m-2 w-50" id="update">Saqlash</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="details.js"></script>
+    <script src="../../bs/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+.navbar{
+    background-color: #194c86;
+}
+.navbar a{
+    color: #fff;
+}
+#logoutBtn i{
+    color: #fff;
+}
+#logoutBtn i:hover{
+    color: red;
+}
+#logoutBtn{
+    background-color: transparent; 
+    border: none; 
+    padding-right: 1.2rem;
+}
+
+
+.cardd {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 90%;
+    margin: 20px 0;
+    border-left: 10px solid #194c86;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin: 2% 5% 0 5%;
+}
+
+.cardd h2 {
+    width: 100%;
+    margin-top: 0;
+    font-size: 1.8em;
+    color: #194c86;
+    border-bottom: 2px solid #194c86;
+    padding-bottom: 10px;
+}
+
+.cardd .section {
+    width: 100%;
+    margin-bottom: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cardd .section p {
+    flex: 1 1 100%; /* Ensure full width */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cardd .section.full-width p {
+    flex: 1 1 100%;
+}
+
+.cardd .highlight {
+    background-color: #e7f5fe;
+    padding: 5px;
+    border-radius: 5px;
+    color: #194c86;
+}
+
+.cardd .footer {
+    width: 100%;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #ececec;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cardd .footer p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #999;
+}
+
+.cardd .footer a {
+    font-size: 0.9em;
+    color: #194c86;
+}
+
+.cardd a {
+    color: #194c86;
+    text-decoration: none;
+}
+
+.cardd a:hover {
+    text-decoration: underline;
+}
