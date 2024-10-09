@@ -22,9 +22,9 @@ async function populateUserData() {
         // Store user ID in a hidden field or a global variable
         document.getElementById('userId').value = user.id;
         initialPassword = user.password; // Store the initial password
-        // console.log('User ID:', user.id); // Log the user ID to ensure it's correct
+        //console.log('User ID:', user.id); // Log the user ID to ensure it's correct
     } catch (error) {
-        // console.error("Error fetching user data: ", error);
+        //console.error("Error fetching user data: ", error);
     }
 }
 
@@ -50,7 +50,7 @@ async function updateUserData() {
 
     try {
         const url = `${api_url}/users/userlist/${userId}`;
-        // console.log('PUT URL:', url); // Log the URL to verify it's correct
+        //console.log('PUT URL:', url); // Log the URL to verify it's correct
         const response = await axios.patch(url, userData, {
             headers: {
                 'Authorization': 'Bearer ' + localStorage.getItem('access_token')
@@ -58,7 +58,7 @@ async function updateUserData() {
         });
         alert('User data updated successfully!');
     } catch (error) {
-        // console.error("Error updating user data: ", error);
+        //console.error("Error updating user data: ", error);
     }
 }
 
@@ -79,7 +79,7 @@ async function logOut() {
         localStorage.removeItem('refresh_token');
         window.location.href = "../../index.html";
     } catch (error) {
-        // console.error("logout error: ", error);
+        //console.error("logout error: ", error);
     }
 }
 

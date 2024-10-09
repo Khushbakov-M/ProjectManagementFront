@@ -38,7 +38,7 @@ async function getAllDevelopers(selectedTeamID) {
             }
         })
         .catch(err => {
-            // console.error(err)
+            //console.error(err)
         })
 }
 
@@ -57,7 +57,7 @@ async function logOut() {
         });
         window.location.href = "../../index.html";
     } catch (error) {
-        // console.error("logout error: ", error);
+        //console.error("logout error: ", error);
     }
 }
 async function refreshAccessToken() {
@@ -74,7 +74,7 @@ async function refreshAccessToken() {
                 window.location.href = "../../index.html"
             });
     } catch (err) {
-        // console.error(err);
+        //console.error(err);
     }
 }
 

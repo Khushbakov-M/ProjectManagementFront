@@ -4,6 +4,7 @@ document.getElementById('logoutBtn').addEventListener('click', (event) => {
     logOut();
 });
 
+
 function logOut() {
     try {
         axios.post(`${api_url}/api/logout/`, {
@@ -16,7 +17,7 @@ function logOut() {
             window.location.href = "../index.html";
         });
     } catch (error) {
-        // console.error("logout error: ", error);
+        //console.error("logout error: ", error);
     }
 }
 
@@ -36,6 +37,10 @@ async function fillStats() {
         headers: { 'Authorization': `Bearer ${localStorage.getItem('access_token')}` }
     })).data
 
+    //console.log(subteams);
+    subteams.filter(item => item.status == 'accepted')
+    createStatic(subteams)
+
     done_count.innerHTML = `<strong>${subteams.filter(item => item.status == 'accepted').length}</strong> Bajarilganlar`
 
     teams_count.innerText = (await axios.get(`${api_url}/users/teamlist`, {
@@ -45,16 +50,20 @@ async function fillStats() {
     const dev_data = (await axios.get(`${api_url}/users/developer/`, {
         headers: { 'Authorization': `Bearer ${localStorage.getItem('access_token')}` }
     })).data;
+
     developers_count.innerText = dev_data.length
     frontend_count.innerHTML = `<strong>${dev_data.filter(item => item.position.toLowerCase() == 'frontend').length}</strong> FrontEndchi`
     backend_count.innerHTML = `<strong>${dev_data.filter(item => item.position.toLowerCase() == 'backend').length}</strong> BackEndchi`
     designer_count.innerHTML = `<strong>${dev_data.filter(item => item.position.toLowerCase() == 'designer').length}</strong> Dizayner`
 
+    // let a = developers_count.innerText
+
+    // console.log(dev_data);
 
     const employmentData = (await axios.get(`${api_url}/users/team-employment/`, {
         headers: { 'Authorization': `Bearer ${localStorage.getItem('access_token')}` }
     })).data;
-    // console.log(employmentData);
+    //console.log(employmentData);
     busy_count.innerHTML = `<strong>${employmentData.filter(item => item.status == 'busy').length}</strong> Band jamoalar`
 }
 
@@ -76,3 +85,17 @@ async function refreshAccessToken() {
         window.location.href = "../index.html";
     }
 }
+
+
+function createStatic(props) {
+    // console.log(props);
+    
+    // props?.map( (item) => {
+    //     main_wrap.innerHTML += item.created_at
+    // })
+}
+
+
+
+
+

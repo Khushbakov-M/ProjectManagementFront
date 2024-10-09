@@ -96,7 +96,7 @@ async function fetchRequests(searching_project_name, status) {
                         })
                         .catch(error => {
                             document.getElementById(`team-title-${item.id}`).textContent = 'Ошибка загрузки';
-                            // console.error('Ошибка при получении данных команды:', error);
+                            //console.error('Ошибка при получении данных команды:', error);
                         });
 
                     axios.get(`${api_url}/users/userlist/${item.requester}`, {
@@ -109,7 +109,7 @@ async function fetchRequests(searching_project_name, status) {
                         })
                         .catch(error => {
                             document.getElementById(`team-leader-${item.id}`).textContent = 'XXX';
-                            // console.error('Ошибка при получении данных команды:', error);
+                            //console.error('Ошибка при получении данных команды:', error);
                         });
                 });
             }
@@ -124,7 +124,7 @@ async function fetchRequests(searching_project_name, status) {
             document.getElementById("projects_list").innerHTML += html;
         }
     } catch (error) {
-        // console.error(error);
+        //console.error(error);
     }
 }
 
@@ -149,10 +149,10 @@ async function yes_Button_click() {
                 }
             }
         );
-        window.location.reload();
+    window.location.reload();
     } catch (error) {
-        // console.error(error);
-        alert("error")
+        //console.error(error);
+        alert("errrrrrorro")
     }
 
 }
@@ -190,6 +190,7 @@ async function getEnteredUsersData() {
         return response.data;
     } catch (error) {
         window.location.href = "../../index.html"
+        // console.error('Ошибка при получении информации о пользователе:', error.message);
         return null;
     }
 }
@@ -212,7 +213,7 @@ async function logOut() {
         });
         window.location.href = "../../index.html";
     } catch (error) {
-        // console.error("logout error: ", error);
+        //console.error("logout error: ", error);
     }
 }
 async function refreshAccessToken() {

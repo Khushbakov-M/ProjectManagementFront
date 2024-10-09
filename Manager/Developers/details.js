@@ -10,7 +10,7 @@ async function setDevInfo() {
             'Authorization': 'Bearer ' + localStorage.getItem('access_token')
             }
         })).data
-        // console.log(dev_data);
+        //console.log(dev_data);
         fish.innerText = dev_data.fish
         position.innerText = capitalize(dev_data.position)
         const aTag = document.createElement('a')
@@ -48,7 +48,7 @@ async function logOut() {
         });
         window.location.href = "../../index.html";
     } catch (error) {
-        // console.error("logout error: ", error);
+        //console.error("logout error: ", error);
     }
 }
 async function refreshAccessToken() {
@@ -69,7 +69,7 @@ async function refreshAccessToken() {
                 window.location.href = "../../index.html"
             });
     } catch (err) {
-        // console.error(err);
+        //console.error(err);
     }
 }
 

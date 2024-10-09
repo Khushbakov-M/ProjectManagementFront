@@ -1,8 +1,8 @@
 const users_url = 'http://localhost:8080'
 
 document.getElementById('btn_login').addEventListener('click', function (event) {
-    // console.log(username.value)
-    // console.log(password.value)
+    //console.log(username.value)
+    //console.log(password.value)
     axios.post(`${users_url}/users/login/`, {
         username: document.getElementById('username').value,
         password: document.getElementById('password').value
@@ -18,15 +18,15 @@ document.getElementById('btn_login').addEventListener('click', function (event) 
             if (role === 'project_manager') {
                 window.location.href = 'Manager/dashboard.html';
             } else if (role === 'captain') {
-                window.location.href = 'Captain/dashboard.html';
+                window.location.href = 'Captain/Announcements/announcements.html';
             } 
         }
         else{
-            // console.log(message);
+            //console.log(message);
         }
     })
     .catch(function (error) {
 
-        // console.error("Shu yerda",error);
+        //console.error("Shu yerda",error);
     })
 })

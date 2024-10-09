@@ -66,7 +66,7 @@ async function fetchTeamList() {
             html = results.join('');
             document.getElementById("main").innerHTML = html;
         }).catch(error => {
-            // console.error('Error fetching announcements:', error);
+            //console.error('Error fetching announcements:', error);
         });
     } else {
         html += `
@@ -109,7 +109,7 @@ async function yes_Button_click() {
             'Authorization': 'Bearer ' + localStorage.getItem('access_token')
         }
     })
-    alert('successfull')
+    window.location.reload();
 }
 async function getSelectedSubTeamId(id) {
     selected_subTeam_id = id
@@ -124,8 +124,8 @@ async function deleteBajaruvchi(id) {
                 'Authorization': 'Bearer ' + localStorage.getItem('access_token')
             }
         })
+        window.location.reload();
     }
-    window.location.reload();
 }
 
 async function fillModalWithDevelopers() {
@@ -169,8 +169,9 @@ async function fillModalWithDevelopers() {
                 team: global_team_id,
                 developers: selectedIds
             };
+            window.location.reload();
 
-            // console.log('Post Data:', patchData); // Log data being sent
+            //console.log('Post Data:', patchData); // Log data being sent
 
             try {
                 const response = await axios.patch(`${api_url}/users/subteamlist/${selected_subTeam_id}`, patchData, {
@@ -179,11 +180,10 @@ async function fillModalWithDevelopers() {
                     }
                 });
 
-                // console.log('Server Response:', response.data); // Log server response
-                window.location.reload();
+                //console.log('Server Response:', response.data); // Log server response
             } catch (error) {
-                // console.error('Error posting subteam list:', error.response.data); // Log error response
-                // window.location.reload();
+                //console.error('Error posting subteam list:', error.response.data); // Log error response
+                window.location.reload();
             }
         }
         else {
@@ -264,7 +264,7 @@ async function logOut() {
         });
         window.location.href = "../../index.html";
     } catch (error) {
-        // console.error("logout error: ", error);
+        //console.error("logout error: ", error);
     }
 }
 async function refreshAccessToken() {

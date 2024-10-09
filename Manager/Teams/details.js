@@ -183,6 +183,7 @@ document.getElementById("update").addEventListener('click', function (event) {
             else {
                 userData.password = Password;
             }
+            
 
             // console.log(`Updating user with ID: ${User_id}`, userData);
             axios.put(`${users_url}/users/userlist/${User_id}`, userData, {
@@ -207,11 +208,12 @@ document.getElementById("update").addEventListener('click', function (event) {
                         // console.error('Error message:', error.message);
                         // alert('Error: ' + error.message);
                     }
+                    window.location.reload();
                 });
         })
         .catch(function (error) {
             // console.error('Error updating team:', error);
-            alert('Произошла ошибка при обновлении команды');
+            //alert('Произошла ошибка при обновлении команды');
         });
 });
 

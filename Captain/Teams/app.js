@@ -54,13 +54,14 @@ async function fetchTeamList() {
     }
     document.getElementById("main").innerHTML = html;
 
-    if ((await axios.get(`${api_url}/users/team-employment/`)).data.filter(item => item.team == global_team_id)[0].status == "free") {
-        document.getElementById('toggleButton').classList.add('btn-success')
-    }
-    else {
-        document.getElementById('toggleButton').classList.add('btn-danger')
-    }
+    const teamEmploymentData = (await axios.get(`${api_url}/users/team-employment/`)).data;
+    const teamEmploymentItem = teamEmploymentData.filter(item => item.team == global_team_id)[0];
 
+    if (teamEmploymentItem && teamEmploymentItem.status === "free") {
+        document.getElementById('toggleButton').classList.add('btn-success');
+    } else {
+        document.getElementById('toggleButton').classList.add('btn-danger');
+    }
     document.getElementById('toggleButton').addEventListener('click', async function () {
 
         this.classList.toggle('btn-danger');
@@ -74,7 +75,7 @@ async function fetchTeamList() {
                     }
                 });
             } catch (error) {
-                // console.error(error);
+                //console.error(error);
             }
         } else if (this.classList.contains('btn-danger')) {
             try {
@@ -84,7 +85,7 @@ async function fetchTeamList() {
                     }
                 });
             } catch (error) {
-                // console.error(error);
+                //console.error(error);
             }
         }
     });
@@ -103,7 +104,7 @@ async function fetchTeamList() {
     if (devData.length > 0) {
         devData.forEach(item => {
             dev_card += `
-          <div class="card">
+          <div class="card pb-1">
             <div class="photo-box d-flex justify-content-center">
               <img src="${item.image}" alt="Photo">
             </div>
@@ -114,6 +115,9 @@ async function fetchTeamList() {
             <div class="section">
               <p><strong>Jamoa:</strong> ${item.team.title}</p>
               <p><strong>Yo'nalishi:</strong> ${capitalize(item.position)}</p>
+            </div>
+            <div class="section text-end mb-2">
+              <button data-id="${item.id}" class="btn btn-danger bi-trash-fill"> O'chirish</button>
             </div>
           </div>
         `;
@@ -126,9 +130,15 @@ async function fetchTeamList() {
     }
     document.getElementById("dev_list").innerHTML += dev_card;
 
-    // } catch (error) {
-    //   console.error(error);
-    // }
+    document.querySelectorAll('.btn-danger').forEach(button => {
+        button.addEventListener('click', function() {
+            const selected_dev_id = this.getAttribute('data-id');
+            if (confirm("O'chirishga aminmisiz?")) {
+                axios.delete(`${api_url}/users/developer/${selected_dev_id}`)
+            }
+            window.location.reload();
+        });
+    });
 }
 
 async function getEnteredUsersData() {
@@ -168,7 +178,7 @@ async function logOut() {
         });
         window.location.href = "../../index.html";
     } catch (error) {
-        // console.error("logout error: ", error);
+        //console.error("logout error: ", error);
     }
 }
 async function refreshAccessToken() {
@@ -207,6 +217,6 @@ document.getElementById('btn-submit').addEventListener('click', async function (
         fetchTeamList();
         window.location.reload();
     } catch (error) {
-        // console.error('Error adding developer:', error);
+        //console.error('Error adding developer:', error);
     }
 });

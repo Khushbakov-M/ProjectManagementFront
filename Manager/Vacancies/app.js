@@ -15,9 +15,6 @@ async function loadData(filter) {
                         <div class="cardd mb-3 my-1" data-id="${item.id}" >
                             <h2 style="border-bottom: 2px solid black">Jamoa: <span id="teamname">${teamtitle}</span></h2>
                             <div class="section m-0">
-                                <p>ID: <span class="highlight">${item.id}</span></p>
-                            </div>
-                            <div class="section m-0">
                                 <p>Soha: <span class="highlight">${capitalize(item.position)}</span></p>
                             </div>
                             <div class="section m-0">
@@ -41,7 +38,7 @@ async function loadData(filter) {
             `;
         }
     } catch (error) {
-        console.log(error);
+        //console.log(error);
     }
 }
 
@@ -70,7 +67,7 @@ async function logOut() {
         });
         window.location.href = "../../index.html";
     } catch (error) {
-        console.error("logout error: ", error);
+        //console.error("logout error: ", error);
     }
 }
 async function refreshAccessToken() {
@@ -91,6 +88,6 @@ async function refreshAccessToken() {
                 window.location.href = "../../index.html"
             });
     } catch (err) {
-        console.error(err);
+        //console.error(err);
     }
 }

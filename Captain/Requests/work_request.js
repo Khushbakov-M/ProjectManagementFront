@@ -1,10 +1,9 @@
-document.addEventListener('DOMContentLoaded', async () => {
+async function fillModalWithDevs(){
     await refreshAccessToken()
     const eachDeveloperContainer = document.getElementById('each-developer-container');
     const submitButton = document.getElementById('give-btn');
     const teamTitle1 = localStorage.getItem('teamTitle');
     const global_team_id1 = localStorage.getItem('global_team_id');
-
     const devListUrl = `${api_url}/users/developer/${teamTitle1}/${global_team_id1}`;
     try {
         const devListResponse = await axios.get(devListUrl, {
@@ -39,10 +38,11 @@ document.addEventListener('DOMContentLoaded', async () => {
                 const postData = {
                     announcement: announcement_id,
                     team: global_team_id1,
+                    request: global_selected_request_id,
                     developers: selectedIds
                 };
 
-                // console.log('Post Data:', postData); // Log data being sent
+                //console.log('Post Data:', postData); // Log data being sent
 
                 try {
                     const response = await axios.post(`${api_url}/users/subteamlist/`, postData, {
@@ -51,10 +51,10 @@ document.addEventListener('DOMContentLoaded', async () => {
                         }
                     });
 
-                    // console.log('Server Response:', response.data); // Log server response
-                    window.location.reload();
+                    //console.log('Server Response:', response.data); // Log server response
+                    alert("Muvaffaqiyatli");
                 } catch (error) {
-                    // console.error('Error posting subteam list:', error.response.data); // Log error response
+                    //console.error('Error posting subteam list:', error.response.data); // Log error response
                     window.location.reload();
                 }
             }
@@ -64,9 +64,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         });
     } catch (error) {
-        // console.error('Error fetching developer list:', error);
+        //console.error('Error fetching developer list:', error);
     }
-});
+}
 
 
 document.getElementById('logoutBtn').addEventListener('click', async (event) => {
@@ -84,7 +84,7 @@ async function logOut() {
         });
         window.location.href = "../../index.html";
     } catch (error) {
-        // console.error("logout error: ", error);
+        //console.error("logout error: ", error);
     }
 }
 async function refreshAccessToken() {

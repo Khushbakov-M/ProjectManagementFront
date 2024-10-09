@@ -18,8 +18,9 @@ async function fetchRequests(searching_project_name, status) {
     const teamData = teamListResponse.data[0];
     global_team_id = teamData.id
     const teamTitle = teamData.title
-
-
+    localStorage.setItem('teamTitle', teamData.title); // Store the team title correctly
+    localStorage.setItem('global_team_id', teamData.id); // Store the team ID correctly
+    //console.log('Updated teamTitle and global_team_id in localStorage:', localStorage.getItem('teamTitle'), localStorage.getItem('global_team_id'));
 
     const subTeamListUrl = `${api_url}/users/subteamlist/with-team/${global_team_id}`;
     const subTeamListResponse = await axios.get(subTeamListUrl, {
@@ -33,7 +34,9 @@ async function fetchRequests(searching_project_name, status) {
             'Authorization': 'Bearer ' + localStorage.getItem('access_token')
         }
     });
-    
+//console.log(myWorkRequesUrl);
+
+
 
     const subTeamData = subTeamListResponse.data
     var workRequestsData = myWorkRequestResponse.data.filter(item => item.status === status);
@@ -66,7 +69,7 @@ async function fetchRequests(searching_project_name, status) {
                         </div>
                         <div class="footer">
                             <p>Yaratilgan vaqt: <span>${item.created_at}</span></p>
-                            ${!subTeamListResponse.data.some(each => each.announcement === item.announcement.id)?(item.status == 'accepted' ? `<button id="giveWorkButton_${item.announcement.id}" onclick="handleButtonClick(${item.announcement.id})" class="open-modal-button btn btn-success mx-2" data-bs-toggle="modal" data-bs-target="#giveWorkModal">Ish yuklash</button>` : ''):''}
+                            ${!subTeamListResponse.data.some(each => each.announcement === item.announcement.id)?(item.status == 'accepted' ? `<button id="giveWorkButton_${item.announcement.id}" onclick="handleButtonClick(${item.announcement.id},${item.id})" request-id="${item.id}" class="open-modal-button btn btn-success mx-2" data-bs-toggle="modal" data-bs-target="#giveWorkModal">Ish yuklash</button>` : ''):''}
                         </div>
                     </div>
                 `;
@@ -86,6 +89,7 @@ async function fetchRequests(searching_project_name, status) {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
+    await fillModalWithDevs()
     document.getElementById('statusSelect').value = 'all'
     document.getElementById("filter_project_name").value = ''
     await fetchRequests('', 'all');
@@ -120,11 +124,11 @@ async function getEnteredUsersData() {
     }
 }
 
-
-function handleButtonClick(ann_id) {
+var global_selected_request_id = -1
+function handleButtonClick(ann_id,request_id) {
     localStorage.setItem('pressed_announcement_id', ann_id);
+    global_selected_request_id = request_id
 }
-
 
 document.getElementById('logoutBtn').addEventListener('click', async (event) => {
     await logOut();
@@ -141,7 +145,7 @@ async function logOut() {
         });
         window.location.href = "../../index.html";
     } catch (error) {
-        // console.error("logout error: ", error);
+        //console.error("logout error: ", error);
     }
 }
 async function refreshAccessToken() {

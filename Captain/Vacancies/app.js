@@ -48,6 +48,7 @@ async function loadData(filter) {
                                 }
                             })
                         }
+                        window.location.reload();
                     });
                 });
             })
@@ -117,7 +118,7 @@ async function logOut() {
         });
         window.location.href = "../../index.html";
     } catch (error) {
-        // console.error("logout error: ", error);
+        //console.error("logout error: ", error);
     }
 }
 async function refreshAccessToken() {
@@ -138,6 +139,6 @@ async function refreshAccessToken() {
                 window.location.href = "../../index.html"
             });
     } catch (err) {
-        // console.error(err);
+        //console.error(err);
     }
 }
