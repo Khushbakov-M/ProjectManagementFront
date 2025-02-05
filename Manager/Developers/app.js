@@ -1,4 +1,4 @@
-var users_url = `http://localhost:8080`
+var users_url = `https://projectmanagement-2s4q.onrender.com`
 async function getAllDevelopers(selectedTeamID) {
     await refreshAccessToken()
     await axios.get(`${users_url}/users/developer/`, {

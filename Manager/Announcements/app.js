@@ -1,4 +1,4 @@
-const api_url = 'http://localhost:8080'
+const api_url = 'https://projectmanagement-2s4q.onrender.com'
 
 async function loadAnnouncements(searchingProjectName, searchingProjectType) {
     await refreshAccessToken()

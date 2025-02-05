@@ -1,4 +1,4 @@
-const api_url = 'http://localhost:8080';
+const api_url = 'https://projectmanagement-2s4q.onrender.com';
 var global_team_id = '';
 var global_user_id = '';
 var selected_request_id = 0;

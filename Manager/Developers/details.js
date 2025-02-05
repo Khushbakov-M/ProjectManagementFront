@@ -1,6 +1,6 @@
 const urlParams = new URLSearchParams(window.location.search);
 const dev_id = urlParams.get('id');
-var users_url = `http://localhost:8080`
+var users_url = `https://projectmanagement-2s4q.onrender.com`
 
 async function setDevInfo() {
     await refreshAccessToken()

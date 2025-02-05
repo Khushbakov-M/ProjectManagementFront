@@ -1,6 +1,6 @@
 const urlParams = new URLSearchParams(window.location.search);
 const ann_id = urlParams.get('id');
-const api_url = 'http://localhost:8080';
+const api_url = 'https://projectmanagement-2s4q.onrender.com';
 
 document.addEventListener('DOMContentLoaded', async function () {
     await refreshAccessToken();
@@ -29,7 +29,7 @@ function getFileName(url) {
 }
 
 // Example usage
-const file1Url = 'http://localhost:8080/media/documents/Python_6upLRCi.docx';
+const file1Url = 'https://projectmanagement-2s4q.onrender.com/media/documents/Python_6upLRCi.docx';
 const fileName = getFileName(file1Url);
 
 

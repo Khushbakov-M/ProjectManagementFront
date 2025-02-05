@@ -1,6 +1,6 @@
 const urlParams = new URLSearchParams(window.location.search);
 const ann_id = urlParams.get('id');
-const api_url = 'http://localhost:8080'
+const api_url = 'https://projectmanagement-2s4q.onrender.com'
 document.addEventListener('DOMContentLoaded', async function () {
     await refreshAccessToken()
     await axios.get(`${api_url}/${ann_id}/`, {

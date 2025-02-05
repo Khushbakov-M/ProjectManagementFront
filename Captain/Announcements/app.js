@@ -1,4 +1,4 @@
-const api_url = 'http://localhost:8080'
+const api_url = 'https://projectmanagement-2s4q.onrender.com'
 var selected_ann_id = 0
 var selected_ann_title = 0
 

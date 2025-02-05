@@ -1,6 +1,5 @@
 
-const users_url = 'http://localhost:8080'
-const announcement_url = 'http://192.168.176.85:8080'
+const users_url = 'https://projectmanagement-2s4q.onrender.com'
 
 document.addEventListener('DOMContentLoaded', async function () {
     await refreshAccessToken()
